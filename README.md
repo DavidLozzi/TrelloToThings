@@ -8,11 +8,11 @@ A super simple migration tool to move out of [Trello](https://trello.com) into [
 
 ### Move from Trello
 
-![Trello card](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/master/assets/trello_screenshot.png)
+![Trello card](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/main/assets/trello_screenshot.png)
 
 ### To Things
 
-![Things screen](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/master/assets/things_screenshot.png)
+![Things screen](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/main/assets/trello_screenshot.png)
 
 1. Your lists in Trello come over as Projects, and associated cards are added under their project
 1. Card name and description
@@ -28,7 +28,7 @@ A super simple migration tool to move out of [Trello](https://trello.com) into [
 1. Export your data from Trello to `tasks.json`
 1. Install [NodeJS](https://nodejs.org/en/)
 1. Install [Things](https://culturedcode.com/things/)
-1. Download [import.js](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/master/import.js) and place it in the same folder as your `tasks.json` file
+1. Download [import.js](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/main/import.js) and place it in the same folder as your `tasks.json` file
 
 ### Migrate
 
