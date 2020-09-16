@@ -10,6 +10,8 @@ const tasks = require('./tasks.json');
 const encodeText = (text) => text
   .replace(/\n/ig,'\u000A')
   .replace(/;/ig, '%3B')
+  .replace(/\?/ig, '%3F')
+  .replace(/"/ig,'%22')
   .replace(/\%/ig, '\u0025')
 
 // console.log(tasks)
@@ -24,6 +26,7 @@ tasks.lists
   });
 
 // ADD TASKS
+let cnt = 0;
 const errors = [];
 console.log('\nimporting cards')
 tasks.cards
@@ -46,13 +49,14 @@ tasks.cards
           
       let checkListItems = tasks.checklists.filter(list => list.idCard === card.id);
       if(checkListItems) {
-        checkListItems = checkListItems.map(list => list.checkItems.map(item => item.name).join('\u000A'));
+        checkListItems = checkListItems.map(list => list.checkItems.map(item => encodeText(item.name)).join('\u000A'));
         checkListItems = `&checklist-items=${checkListItems}`;
       }
       
-      const execString = `open "things:///add?title=${card.name}&notes=${encodeText(card.desc)}${actions}&list=${listName}${deadline}${tags}${checkListItems}"`;
+      const execString = `open "things:///add?title=${encodeText(card.name)}&notes=${encodeText(card.desc)}${actions}&list=${listName}${deadline}${tags}${checkListItems}"`;
       try {
         console.log(`${card.name} into ${listName}`)
+        cnt++;
         execSync(execString);
         // console.log(execString);
       } catch (err) {
@@ -68,11 +72,14 @@ tasks.cards
 
 if(errors.length > 0) {
   console.log('\n\n\n*******\n\n\nTHE FOLLOWING ERRORED\n');
-  errors.forEach(error => {
+  errors.forEach((error, index) => {
+    console.log(`\n\nError #${index + 1}`)
     console.log(`\n${error.listName}\\${error.card.name} - ${error.card.url}\n`)
     console.log(error.execString)
+    console.log('\nError Message:')
+    console.log(error.err.toString())
   })
 }
 
 console.log(`\n\nthere were ${errors.length} errors${errors.length > 0 ? ', scroll up to review, you may have to manually copy these.' : ', enjoy!'}`)
-console.log('DONE!')
+console.log(`DONE! Processed ${cnt} cards`)
