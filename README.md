@@ -28,11 +28,18 @@ A super simple migration tool to move out of [Trello](https://trello.com) into [
 1. Export your data from Trello to `tasks.json`
 1. Install [NodeJS](https://nodejs.org/en/)
 1. Install [Things](https://culturedcode.com/things/)
-1. Download [import.js](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/master/import.js) and place it next to your `tasks.json` file
+1. Download [import.js](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/master/import.js) and place it in the same folder as your `tasks.json` file
+
+### Migrate
+
 1. Open terminal, navigate to the folder containing `tasks.json` and `import.js`
 1. Type in `node import.js`
 1. Your script will run, opening your Things app. Depending on how many cards you have, it could freeze up for a little as it's adding.
 1. Once done, you'll see in the script `DONE!`. If there are any errors, the line before will share that.
+
+### Handling Errors
+
+I did what I could to remove many errors due to formatting of content, however I couldn't catch them all. When I run this on over 150 tasks, I got 8 errors. I suggest if it does error, review the content in question, it might be easy enough to create those tasks manually.
 
 ## Issues, requests, etc
 
