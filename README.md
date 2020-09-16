@@ -35,7 +35,9 @@ A super simple migration tool to move out of [Trello](https://trello.com) into [
 1. Open terminal, navigate to the folder containing `tasks.json` and `import.js`
 1. Type in `node import.js`
 1. Your script will run, opening your Things app. Depending on how many cards you have, it could freeze up for a little as it's adding.
-1. Once done, you'll see in the script `DONE! Processed XXX cards`. If there are any errors, the line before will share that.
+1. Once done, you'll see in the script `DONE! Processed XXX cards`.
+
+Note the line above `DONE!`. If it states `there were 0 errors, enjoy!` then you're good! Otherwise, read on.
 
 ### Handling Errors
 
