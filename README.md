@@ -6,11 +6,11 @@ A super simple migration tool to move out of [Trello](https://trello.com) into [
 
 ## What migrates
 
-### Move from
+### Move from Trello
 
 ![Trello card](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/master/assets/trello_screenshot.png)
 
-### To
+### To Things
 
 ![Things screen](https://raw.githubusercontent.com/DavidLozzi/TrelloToThings/master/assets/things_screenshot.png)
 
